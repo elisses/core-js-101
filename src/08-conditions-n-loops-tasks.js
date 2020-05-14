@@ -27,8 +27,18 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  let value = '';
+  if (num % 3 === 0 && num % 5 === 0) {
+    value = 'FizzBuzz';
+  } else if (num % 3 === 0) {
+    value = 'Fizz';
+  } else if (num % 5 === 0) {
+    value = 'Buzz';
+  } else {
+    value = num;
+  }
+  return value;
 }
 
 
@@ -165,10 +175,15 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+      return str[i];
+    }
+  }
+  return null;
 }
-
+findFirstSingleChar('The quick brown fox jumps over the lazy dog');
 
 /**
  * Returns the string representation of math interval,
